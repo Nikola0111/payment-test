@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Secure Authentication</title>
+  </head>
+
+  <body>
+    <p>Redirecting to 3D Secure...</p>
+    <form
+      id="pay3D"
+      action="https://entegrasyon.asseco-see.com.tr/msu/api/v2/post/auth3d/<%= token %>"
+      method="post"
+    >
+      <input type="hidden" name="encryptedData" value="<%= e_data %>" />
+    </form>
+
+    <script>
+      document.getElementById("pay3D").submit();
+    </script>
+  </body>
+</html>
